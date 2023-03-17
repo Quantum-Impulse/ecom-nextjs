@@ -1,17 +1,19 @@
-const index = () => {
-  const message: string = "Hello World"
-  const age: number = 12 ;
-  let b: NodeJS.Process 
+import { useEffect } from "react"
+import play from "../playground";
 
-  let person: Person = {
-    name: "James"
-  }
+const Home = () => {
 
-
+  
+  useEffect( () => {
+    play();
+  }, [])
+  
   return (
     
-    <div>{message}</div>
+    <div>
+      Hello World
+    </div>
   )
 }
 
-export default index
+export default Home
