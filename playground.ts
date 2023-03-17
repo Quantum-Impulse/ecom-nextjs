@@ -1,8 +1,16 @@
+// interface over types recommended by TS when possible!!!
+
+
+// interface describes data structures in a more natural way
+// describes objects( shipments, orders)
 interface Person {
     name: string,
     age: number
 }
 
+// type aliases ` type data = string`
+// better to describe function types
+// 
 // type Person ={
 //     name: string,
 //     age: number
