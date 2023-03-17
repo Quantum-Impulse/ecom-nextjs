@@ -1,20 +1,11 @@
-// interface over types recommended by TS when possible!!!
-
-
-// interface describes data structures in a more natural way
-// describes objects( shipments, orders)
 interface Person {
     name: string,
     age: number
 }
 
-// type aliases ` type data = string`
-// better to describe function types
-// 
-// type Person ={
-//     name: string,
-//     age: number
-// }
+interface PersonLoggerFn {
+    logPersonInfo(): string
+}
 
 export default function play() {
     const name: string = 'Filip'
@@ -25,7 +16,7 @@ export default function play() {
         age: 43
     }
     
-    function logPersonInfo( personName: string, personAge: number){
+    function logPersonInfo( personName: string, personAge: number): string{
         const info = "Name: " + personName + ", age: " + personAge
         
         console.log(info)
@@ -38,7 +29,7 @@ export default function play() {
         return info
     }
 
-    logPersonInfo(name, age)
+    const log:string = logPersonInfo(name, age)
     logPersonInfo2(person)
 
 }
