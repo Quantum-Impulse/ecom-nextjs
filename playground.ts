@@ -3,9 +3,11 @@ interface Person {
     age: number
 }
 
-interface PersonLoggerFn {
-    logPersonInfo(): string
-}
+// interface PersonLoggerFn {
+//     (name:string, age:number): string
+// }
+
+type PersonLoggerFn = (name:string, age:number) => string
 
 export default function play() {
     const name: string = 'Filip'
@@ -15,13 +17,13 @@ export default function play() {
         name: "John",
         age: 43
     }
-    
-    function logPersonInfo( personName: string, personAge: number): string{
+
+    const logPersonInfo:PersonLoggerFn = ( personName:string, personAge:number): string =>{
         const info = "Name: " + personName + ", age: " + personAge
-        
         console.log(info)
         return info
     }
+
     function logPersonInfo2(person: Person){
         const info = "Name: " + person.name + ", age: " + person.age
         
