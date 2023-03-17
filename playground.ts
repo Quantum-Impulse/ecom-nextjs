@@ -1,6 +1,15 @@
-interface Person {
-    name: string,
-    age: number
+// interface Person {
+//     name: string,
+//     age: number
+// }
+class Person {
+    name: string = ""
+    age: number = 0
+
+    constructor (name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
 }
 
 // interface PersonLoggerFn {
@@ -32,6 +41,6 @@ export default function play() {
     }
 
     const log:string = logPersonInfo(name, age)
-    logPersonInfo2(person)
+    logPersonInfo2( new Person("bruh", 40))
 
 }
