@@ -16,9 +16,11 @@ const Home = ({
   products
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
+  getAllProducts()
+
   return (  
     <div>
-      {products}
+      {JSON.stringify(products)}
     </div>
   )
 }
