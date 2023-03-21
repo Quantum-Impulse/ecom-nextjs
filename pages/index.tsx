@@ -1,17 +1,23 @@
-import { useEffect } from "react"
-import play from "../playground";
+import type{ InferGetStaticPropsType } from "next"
 
-const Home = () => {
+export async function getStaticProps() {
+  const products = [1,2,3]
 
-  
-  useEffect( () => {
-    play();
-  }, [])
-  
-  return (
-    
+  return {
+    props: {
+      products
+    },
+    revalidate: 4 * 60 * 60
+  }
+}
+
+const Home = ({
+  products
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+
+  return (  
     <div>
-      Hello World
+      {products}
     </div>
   )
 }
