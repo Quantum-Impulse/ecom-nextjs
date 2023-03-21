@@ -1,69 +1,27 @@
 
-
 interface Person {
-    kind: "buisness" | "academic" | "otherTypes"
-    name: string
-    age: number
-  }
-  
-  interface BusinessPerson extends Person {
-    kind: "buisness"
-    salary: number
-  }
-  
-  interface AcademicPerson extends Person {
-    kind: "academic"
-    publications: string[]
-  }
+  name: string
+}
 
-  type Human = BusinessPerson | AcademicPerson | {kind: "otherType", special: string}
-  
-  type RaceCar = {
-    name: string
-    maxSpeed: 200
-    team: string
-  }
-  
-  type CityCar = {
-    name: string
-    space: string
-    maxSpeed: 100
-  } 
+type CustomArray<T> = {
+  [index: number]: T
+}
 
-  type Car = RaceCar | CityCar
-  
-  
-  export default function play() {
+type CustomObject<T = string | number | Person> = {
+  [key: string]: T
+}
 
-    const car:RaceCar = {
-        name: "Race Car",
-        maxSpeed: 200,
-        team: "ferari"
-    }
 
-    function logPersonInfo(human: Human){
-        if (human.kind === "academic") {
-            console.log(human)
-        } else if (human.kind === "buisness") {
-            console.log(human)
-        } else {
-            console.log(human)
-        }
-    }
+export default function play() {
 
-    function logCarInfo(car: Car){
-        
-
-        switch(car.maxSpeed) {
-            case 200:
-                console.log(car.team)
-                break;
-            case 100:
-                console.log(car)
-                break;
-            default:
-                console.log(car)
-        }
-    
+  const person: CustomObject = {
+    "age": 23,
+    "name": "asdasd",
+    "city": "sadasdasd",
+    person: {
+      name: "Filip"
     }
   }
+
+
+}
