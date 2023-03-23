@@ -1,9 +1,15 @@
 import getAllProductQuery from "../utils/queries/get-all-products"
 import fetchApi from "../utils/fetch-api"
 
-const getAllProducts = async (): Promise<any[]> => {
-  const products = await fetchApi({query: getAllProductQuery})
-  return products.data
+import { ProductConnection } from "../schema"
+
+type ReturnType = {
+  products: ProductConnection
+}
+
+const getAllProducts = async (): Promise<any> => {
+  const { data } = await fetchApi<ReturnType>({query: getAllProductQuery})
+  return data.products
 }
 
 export default getAllProducts
