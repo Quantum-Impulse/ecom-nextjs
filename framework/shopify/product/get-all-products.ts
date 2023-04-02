@@ -1,23 +1,27 @@
-import { 
-  fetchApi, 
-  normalizeProduct, 
-  getAllProductsQuery 
-} from "../utils"
-import { ProductConnection } from "../schema"
-import { Product } from "@common/types/product"
 
-type ReturnType = {
-  products: ProductConnection
+import type { InferGetStaticPropsType } from "next"
+import getAllproducts from "@framework/product/get-all-products"
+import { getConfig } from "@framework/api/config"
+
+export async function getStaticProps() {
+  const config = getConfig()
+  const products = await getAllproducts()
+
+  return {
+    props: {
+      products
+    },
+    revalidate: 4 * 60 * 60
+  }
 }
 
-const getAllProducts = async (): Promise<Product[]> => {
-  const { data } = await fetchApi<ReturnType>({query: getAllProductsQuery})
+export default function Home({
+  products
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 
-  const products = data.products.edges.map( ({node: product}) => 
-    normalizeProduct(product)
-  ) ?? []
-
-  return products
+  return (
+    <div>
+      { JSON.stringify(products) }
+    </div>
+  )
 }
-
-export default getAllProducts
