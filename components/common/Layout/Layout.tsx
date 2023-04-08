@@ -6,9 +6,11 @@ import style from "./Layout.module.css"
    
   const Layout: React.FC<LayoutProps> = ({ children }) => {
     return( 
-      <main className={style.root}>
-        { children }
-      </main>
+      <div className={style.root}>
+        <main className="fit">
+          { children }
+        </main>
+      </div>
     )
   };
 

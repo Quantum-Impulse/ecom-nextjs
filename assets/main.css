@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+. fit {
+    min-height: calc(100vh - 88px)
+}
