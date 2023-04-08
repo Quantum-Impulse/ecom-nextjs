@@ -3,6 +3,7 @@ import type { InferGetStaticPropsType } from "next"
 import getAllproducts from "@framework/product/get-all-products"
 import { getConfig } from "@framework/api/config"
 import { Layout } from "@components/common"
+import "@assets/main.css"
 
 export async function getStaticProps() {
   const config = getConfig()
