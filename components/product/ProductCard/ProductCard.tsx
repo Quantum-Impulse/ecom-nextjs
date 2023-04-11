@@ -6,9 +6,8 @@ interface Props {
     product: Product
 }
 const placeholderImage="/product-image-placeholder.svg"
-const ProductCard: React.FC<Props> = ({product}) => {
 
-    
+const ProductCard: React.FC<Props> = ({product}) => {
     return(
         <Link href={`/products/${product.slug}`}> 
             <a>
