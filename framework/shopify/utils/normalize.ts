@@ -1,6 +1,7 @@
 
 import  {
     ImageEdge,
+    MoneyV2,
     Product as ShopifyProduct
 } from "../schema"
 
@@ -14,6 +15,11 @@ const normalizeProductImages = ({edges}: { edges: Array<ImageEdge>} ) =>
         }
     ))
 
+    const normalizeProductPrice = ({currencyCode, amount}: MoneyV2) => ({
+        value: +amount, // transform string to number with the +
+        currencyCode
+    })
+
 
 
 export function normalizeProduct(productNode: ShopifyProduct): Product {
@@ -24,6 +30,7 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
         vendor,
         description,
         images: imageConnection,
+        priceRange,
         ...rest
     } = productNode
 
@@ -35,6 +42,7 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
         path: `/${handle}`,
         slug: handle.replace( /^\/+|\/+$/g, ""), // regrex expression to remove
         images: normalizeProductImages(imageConnection),
+        price: normalizeProductPrice(priceRange.minVariantPrice),
         ...rest
     }
 
