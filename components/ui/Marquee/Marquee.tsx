@@ -1,3 +1,4 @@
+
 import { ReactNode, FC } from "react"
 import s from "./Marquee.module.css"
 
@@ -10,7 +11,9 @@ const Marquee: FC<Props> = ({children}) => {
 
   return (
     <div className={s.root}>
-      {children}
+      <div className={s.container}>
+        {children}
+      </div>
     </div>
   )
 }
