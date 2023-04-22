@@ -1,5 +1,5 @@
 .root {
-    @apply flex flex-xol py-32 md:flex-row justify-center;
+    @apply flex flex-col py-32 md:flex-row justify-center;
   }
   
   .headline {
