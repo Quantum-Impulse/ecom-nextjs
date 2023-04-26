@@ -5,7 +5,11 @@ const UIContext = createContext<{[key: string]: any}>({
   uiState: "defaultState"
 })
 
-export const UIProvider: FC = ({children}) => {
+interface Props {
+    children: any;
+  } 
+
+export const UIProvider: FC<Props> = ({children}) => {
     const [isSidebarOpen, setSidebarOpen] = useState(false)
 
     const uiState = {
