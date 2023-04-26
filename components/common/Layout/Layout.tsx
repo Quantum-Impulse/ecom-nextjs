@@ -9,12 +9,12 @@ interface LayoutProps {
   }
 
   const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const ui = useUI()
+    const {isSidebarOpen, closeSidebar} = useUI()
 
     return( 
       <div className={s.root}>
         <Navbar/>
-        <Sidebar isOpen={ui.isSidebarOpen}>
+        <Sidebar onClose={closeSidebar} isOpen={isSidebarOpen}>
           <CartSidebar />
         </Sidebar>
         <main className="fit">
