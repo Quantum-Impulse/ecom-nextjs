@@ -11,6 +11,8 @@ interface LayoutProps {
   const Layout: React.FC<LayoutProps> = ({ children }) => {
     const {isSidebarOpen, closeSidebar} = useUI()
 
+    console.log("Re-rendering LAYOUT")
+
     return( 
       <div className={s.root}>
         <Navbar/>
