@@ -2,7 +2,7 @@
 import { AppProps } from "next/app"
 import { FC } from "react"
 import "@assets/main.css"
-import { UIProvider, useUI } from "@components/ui/context";
+import { UIProvider } from "@components/ui/context";
 
 interface Layout {
     children: React.ReactNode;
@@ -10,13 +10,9 @@ interface Layout {
   
 const Noop: React.FC<Layout> = ({children}) => <>{children}</>
 
-function MyApp({Component, pageProps}: AppProps & {Component: {Layout: FC}}) {
+function MyApp({Component, pageProps}: AppProps & {Component: {Layout: any}}) {
   
   const Layout = Component.Layout ?? Noop
-
-  const ui = useUI()
-
-  console.log(ui)
 
   return (
     <UIProvider>
