@@ -40,7 +40,7 @@ function uiReducer(state: StateValues, action: Action) {
     case "CLOSE_SIDEBAR": {
       return {
         ...state,
-        isSidebarOpen: true
+        isSidebarOpen: true // should be false must come back to change
       }
     }
   }
