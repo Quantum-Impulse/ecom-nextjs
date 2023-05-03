@@ -1,17 +1,15 @@
 import { Layout } from "@components/common"
 import { getConfig } from "@framework/api/config"
-import getAllProducts from "@framework/product/get-all-products"
-import { get } from "http"
+import getAllProductsPaths from "@framework/product/get-all-products-paths"
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next"
 
 // fetch all of the products slugs
 export const getStaticPaths: GetStaticPaths = async () => {
-
   const config = getConfig()
-  const { products } = await getAllProducts(config)
+  const { products } = await getAllProductsPaths(config)
 
   return {
-    paths: products.map(p => ( {params: {slug: p.slug} } )),
+    paths: products.map(p => ({params: {slug: p.slug}})),
     fallback: false
   }
 }
