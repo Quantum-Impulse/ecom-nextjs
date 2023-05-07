@@ -1,5 +1,3 @@
-
-
 import {
     ImageEdge,
     MoneyV2,
@@ -26,11 +24,26 @@ import {
     name: displayName
   }: ProductOption) => {
   
-    console.log("ID ", id)
-    console.log("NAME ", displayName)
-    console.log("VALUES ", values)
-  
-    return {}
+    const normalized = {
+      id,
+      displayName,
+      values: values.map( value => {
+        let output: any = {
+          label: value
+        }
+
+        if(displayName.match(/colou?r/gi)){
+          output = {
+            ...output,
+            hexColor: value
+          }
+        }
+
+        return output
+      })
+    }
+
+    return normalized
   }
   
   export function normalizeProduct(productNode: ShopifyProduct): Product {
