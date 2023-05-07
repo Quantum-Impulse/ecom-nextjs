@@ -67,7 +67,7 @@ import {
               values: [value]
             })
             return option
-            
+
           })
         }
       })
