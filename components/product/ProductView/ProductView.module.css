@@ -37,7 +37,7 @@
 
   & .price {
     @apply px-6 py-2 pb-4 bg-primary text-primary font-bold inline-block tracking-wide;
-  }
+  } 
 
   @screen lg {
     & .name,
@@ -48,11 +48,8 @@
 }
 
 .sidebar {
-  @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 w-full h-full;
-
-  @screen lg {
-    @apply col-span-6 py-24 justify-between;
-  }
+  @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 w-full h-full
+  lg:col-span-6 lg:py-24 lg:justify-between;
 }
 
 .sliderContainer {
@@ -83,9 +80,7 @@
 }
 
 .wishlistButton {
-  @apply absolute z-30 top-6 right-0 bg-primary text-primary w-10 h-10 flex items-center justify-center font-semibold leading-6 cursor-pointer;
-
-  @screen lg {
-    @apply right-12 text-white bg-violet;
-  }
+  @apply absolute z-30 top-6 right-0 bg-primary text-primary 
+    w-10 h-10 flex items-center justify-center font-semibold leading-6 cursor-pointer
+    lg:right-12 lg:text-white lg:bg-violet;
 }
