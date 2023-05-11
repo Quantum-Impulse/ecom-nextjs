@@ -11,6 +11,7 @@ interface Props {
   product: Product
 }
 
+
 const ProductView: FC<Props> = ({ product }) => {
 
   return (
