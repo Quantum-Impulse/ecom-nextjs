@@ -11,24 +11,22 @@ const Navbar: FC = () => {
     <Container>
       <div className={s.root}>
         <div className="flex flex-row md:py-6">
-          <Link href="/">
-            <a className={s.logo}>
-              NEXT_STORE
-            </a>
+          <Link className={s.logo} href="/">
+            NEXT_STORE
           </Link>
 
           <nav className="ml-6 space-x6">
-            <Link href="/">
-              <a className={s.link}>All</a>
+            <Link className={s.link} href="/">
+              All
             </Link>
-            <Link href="/">
-              <a className={s.link}>Clothes</a>
+            <Link className={s.link} href="/">
+              Clothes
             </Link>
-            <Link href="/">
-              <a className={s.link}>Accesories</a>
+            <Link className={s.link} href="/">
+              Accesories
             </Link>
-            <Link href="/">
-              <a className={s.link}>Shoes</a>
+            <Link className={s.link} href="/">
+              Shoes
             </Link>
           </nav>
           <div className="flex flex-1 justify-end space-x-8">

@@ -1,6 +1,6 @@
 
 import { ReactNode, FC } from "react"
-import {Marquee as NewMarquee} from "react-fast-marquee";
+import {Marquee as newMarquee} from "react-fast-marquee";
 import s from "./Marquee.module.css"
 import cn from "classnames"
 
@@ -19,13 +19,13 @@ const Marquee: FC<Props> = ({children, variant="primary"}) => {
   
   return(
     <div className={s.root}>
-      <NewMarquee>
+      <newMarquee>
         { () =>
           <div className={s.container}>
             {children}
           </div>
         }
-      </NewMarquee>
+      </newMarquee>
     </div>
   )
 }
