@@ -1,4 +1,3 @@
-
 import cn from 'classnames'
 import { FC } from 'react'
 import s from './ProductView.module.css'
