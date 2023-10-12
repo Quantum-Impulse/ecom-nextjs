@@ -13,7 +13,7 @@ const ProductCard: FC<Props> = ({product, variant = "simple"}) => {
 
   return (
     <Link legacyBehavior href={`/products/${product.slug}`}>
-      <p className={s.root}>
+      <a className={s.root}>
         { variant === "slim" ?
           <>
             <div className="inset-0 flex items-center justify-center absolute z-20">
@@ -57,7 +57,7 @@ const ProductCard: FC<Props> = ({product, variant = "simple"}) => {
           </>
           )
         }
-      </p>
+      </a>
     </Link>
   )
 }

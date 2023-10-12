@@ -1,5 +1,3 @@
-
-
 import { FC } from "react"
 import { Container } from "@components/ui"
 import Link from "next/link"
@@ -10,23 +8,24 @@ const Navbar: FC = () => {
   return (
     <Container>
       <div className={s.root}>
-        <div className="flex flex-row md:py-6">
-          <Link className={s.logo} href="/">
-            NEXT_STORE
+        <div className="flex flex-1 items-center">
+          <Link legacyBehavior href="/">
+            <a className={s.logo}>
+              NEXT_STORE
+            </a>
           </Link>
-
-          <nav className="ml-6 space-x6">
-            <Link className={s.link} href="/">
-              All
+          <nav className="ml-6 space-x-6">
+            <Link legacyBehavior href="/">
+              <a className={s.link}>All</a>
             </Link>
-            <Link className={s.link} href="/">
-              Clothes
+            <Link legacyBehavior href="/">
+              <a className={s.link}>Clothes</a>
             </Link>
-            <Link className={s.link} href="/">
-              Accesories
+            <Link legacyBehavior href="/">
+              <a className={s.link}>Accesories</a>
             </Link>
-            <Link className={s.link} href="/">
-              Shoes
+            <Link legacyBehavior href="/">
+              <a className={s.link}>Shoes</a>
             </Link>
           </nav>
           <div className="flex flex-1 justify-end space-x-8">

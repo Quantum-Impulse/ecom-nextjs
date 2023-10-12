@@ -3,7 +3,7 @@
   }
   
   .link {
-    @apply text-accents-6 leading-6 font-medium transition;
+    @apply text-accents-6 leading-6 font-medium transition px-2 ;
   
     &:hover {
       @apply text-accents-9;

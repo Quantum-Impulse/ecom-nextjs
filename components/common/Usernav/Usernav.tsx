@@ -17,7 +17,9 @@ const Usernav: FC = () => {
         </li>
         <li className={s.item}>
           <Link legacyBehavior href="/wishlist">
-              <Heart/>
+              <a>
+                <Heart/>
+              </a>
           </Link>
         </li>
       </ul>

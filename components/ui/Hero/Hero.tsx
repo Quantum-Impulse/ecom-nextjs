@@ -23,8 +23,10 @@ const Hero: FC<Props> = ({headline, description}) => {
             <p className={s.description}>
               {description}
             </p>
-            <Link className={s.link} href="/">
-              Read it here
+            <Link legacyBehavior href="/">
+              <a className={s.link}>
+                Read it here
+              </a>
             </Link>
           </div>
         </div>
